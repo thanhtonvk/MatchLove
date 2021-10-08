@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "38599063214",
+    "project_id": "matchlove-6f992",
+    "storage_bucket": "matchlove-6f992.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38599063214:android:49918ca5718990720adf3f",
+        "android_client_info": {
+          "package_name": "com.tondz.matchlove"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38599063214-40rk0t54r05dvh4ihtg7tl4dgrv965ff.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKhW1cYmZfLQ6LeicQgzG5s9dfuU5uS0o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38599063214-40rk0t54r05dvh4ihtg7tl4dgrv965ff.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

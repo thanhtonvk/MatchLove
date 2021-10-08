@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Activity.RegisterActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="71dp"
+            android:layout_height="76dp"
+            android:src="@drawable/ic_heart" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:text="MatchLove"
+            android:textColor="@color/white"
+            android:textSize="60dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edt_email_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_border"
+        android:backgroundTint="#F3C9D7"
+        android:gravity="center"
+        android:hint="Nhập email"
+        android:inputType="textEmailAddress"
+        android:padding="15dp"
+        android:textColor="#99000000"
+        android:textColorHint="#80000000" />
+
+    <EditText
+
+        android:id="@+id/edt_password_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_border"
+        android:backgroundTint="#F3C9D7"
+        android:gravity="center"
+        android:hint="Nhập mật khẩu"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:textColor="#99000000"
+        android:textColorHint="#80000000" />
+
+    <EditText
+        android:id="@+id/edt_name_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_border"
+        android:backgroundTint="#F3C9D7"
+        android:gravity="center"
+        android:hint="Nhập họ tên của bạn"
+        android:inputType="textEmailAddress"
+        android:padding="15dp"
+        android:textColor="#99000000"
+        android:textColorHint="#80000000" />
+
+    <TextView
+        android:id="@+id/edt_date_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_border"
+        android:backgroundTint="#F3C9D7"
+        android:gravity="center"
+        android:hint="DD/MM/YYYY"
+        android:padding="15dp"
+        android:textColor="#99000000"
+        android:textColorHint="#80000000" />
+
+    <Button
+        android:id="@+id/btn_register_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_border"
+        android:backgroundTint="#E87CA0"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="Đăng ký tài khoản"
+        android:textColor="#99FFFFFF"
+        android:textColorHint="#80000000" />
+
+</LinearLayout>

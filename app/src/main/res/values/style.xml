@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="custom_register" parent="android:Theme.DeviceDefault.Dialog">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="DialogTitleText">Đang đăng ký</item>
+        <item name="DialogSpotColor">#E91E63</item>
+        <item name="DialogSpotCount">10</item>
+        <item name="backgroundColor">@color/white</item>
+    </style>
+    <style name="custom_login" parent="android:Theme.DeviceDefault.Dialog">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="DialogTitleText">Đang đăng nhập</item>
+        <item name="DialogSpotColor">#E91E63</item>
+        <item name="DialogSpotCount">10</item>
+        <item name="backgroundColor">@color/white</item>
+    </style>
+</resources>
