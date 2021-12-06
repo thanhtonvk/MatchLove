@@ -48,7 +48,9 @@ public class MainFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         initView(view);
         onClick();
-        loadData();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            loadData();
+        }
         super.onViewCreated(view, savedInstanceState);
     }
 
@@ -89,11 +91,13 @@ public class MainFragment extends Fragment {
 
     TextView tv_name, tv_age, tv_hobbies1, tv_hobbies2, tv_hobbies3, tv_space;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private void loadData() {
         Account account = Common.accountList.get(Common.indexAccount);
         tv_name.setText(account.getFullName());
-        int yearNow = java.time.LocalDate.now().getYear();
+        int yearNow = 0;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            yearNow = java.time.LocalDate.now().getYear();
+        }
         int yearUser = Integer.parseInt(account.getDateOfBirth().split("-")[Common.account.getDateOfBirth().split("-").length - 1].trim());
         tv_age.setText(yearNow - yearUser + " tuổi");
         if (account.getHobbies() != null) {
@@ -117,7 +121,13 @@ public class MainFragment extends Fragment {
         circleIndicator.setViewPager(viewPager);
         photoAdapter.registerDataSetObserver(circleIndicator.getDataSetObserver());
     }
+    List<Account>accounts;
+    private void filter(){
+        for (Account account:Common.accountList
+             ) {
 
+        }
+    }
     MatchDBContext matchDBContext;
 
     private void onClick() {
@@ -135,10 +145,14 @@ public class MainFragment extends Fragment {
                     public void onFinish() {
                         Common.indexAccount++;
                         if (Common.indexAccount < Common.accountList.size()) {
-                            loadData();
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                loadData();
+                            }
                         } else {
                             Common.indexAccount = 0;
-                            loadData();
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                loadData();
+                            }
                         }
                         tv_nope.setVisibility(View.GONE);
                     }
@@ -161,10 +175,14 @@ public class MainFragment extends Fragment {
                     public void onFinish() {
                         Common.indexAccount++;
                         if (Common.indexAccount < Common.accountList.size()) {
-                            loadData();
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                loadData();
+                            }
                         } else {
                             Common.indexAccount = 0;
-                            loadData();
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                loadData();
+                            }
                         }
                         tv_like.setVisibility(View.GONE);
                     }

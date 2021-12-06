@@ -1,5 +1,6 @@
 package com.tondz.matchlove.Activity;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -40,12 +42,13 @@ public class LoginActivity extends AppCompatActivity {
     Button btn_login_choose, btn_register_choose;
     Button btn_login, btn_register;
     AccountDBContext accountDBContext;
-
+    int REQUEST_LOCATION = 111;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initView();
+        ActivityCompat.requestPermissions(LoginActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
         accountDBContext = new AccountDBContext();
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_animation);
         img_logo.setAnimation(animation);

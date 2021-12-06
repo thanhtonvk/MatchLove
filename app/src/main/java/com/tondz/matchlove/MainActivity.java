@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     FusedLocationProviderClient mFusedLocationClient;
     int PERMISSION_ID = 44;
-    int REQUEST_LOCATION = 111;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fadein_animation);
         img_logo.setAnimation(animation);
         tv_logo.setAnimation(animation);
-        ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+
 
         CountDownTimer countDownTimer = new CountDownTimer(3000, 100) {
             @Override

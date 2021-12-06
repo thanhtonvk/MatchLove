@@ -40,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
     Animation animation;
     AccountDBContext accountDBContext;
     TextView edt_date;
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,8 +105,12 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 if (edt_date.getText().toString().equals("")) {
                     Toast.makeText(RegisterActivity.this, "Không được để trống ngày sinh", Toast.LENGTH_SHORT).show();
-                } else {
-                    Account account = new Account(edt_email.getText().toString(),edt_password.getText().toString(),edt_name.getText().toString(),edt_date.getText().toString());
+                }
+                if(!checkLimitAge()){
+                    Toast.makeText(RegisterActivity.this, "Bạn phải lớn hơn 12 tuổi", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Account account = new Account(edt_email.getText().toString(), edt_password.getText().toString(), edt_name.getText().toString(), edt_date.getText().toString());
                     List<String> images = new ArrayList<>();
                     images.add("");
                     images.add("");
@@ -129,12 +134,12 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void setDatePicker() {
         int selectedYear = 0;
-        int selectedMonth=1;
-        int selectedDay=1;
+        int selectedMonth = 1;
+        int selectedDay = 1;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             selectedYear = java.time.LocalDate.now().getYear();
             selectedMonth = java.time.LocalDate.now().getMonthValue();
-           selectedDay = java.time.LocalDate.now().getDayOfMonth();
+            selectedDay = java.time.LocalDate.now().getDayOfMonth();
         }
 
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
@@ -148,6 +153,15 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
+    public boolean checkLimitAge(){
+        int yearNow = 0;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            yearNow = java.time.LocalDate.now().getYear();
+        }
+        int pickYear = Integer.parseInt(edt_date.getText().toString().split("-")[2].trim());
+        if(yearNow-pickYear>12) return true;
+        else return false;
+    }
     //Register account
     private void register(Account account) {
         AlertDialog progress = new SpotsDialog(RegisterActivity.this, R.style.custom_register);
@@ -160,7 +174,7 @@ public class RegisterActivity extends AppCompatActivity {
                     account.setId(firebaseUser.getUid());
                     account.setSpace(30);
                     account.setAgefrom(18);
-                    account.setAgefrom(30);
+                    account.setAgeto(30);
                     account.setFemale(true);
                     account.setMale(false);
                     accountDBContext.getReference().child(account.getId()).setValue(account).addOnCompleteListener(new OnCompleteListener<Void>() {
