@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
     int PERMISSION_ID = 44;
     int REQUEST_LOCATION = 111;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

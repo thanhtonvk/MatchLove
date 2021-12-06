@@ -82,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     //Onclick event
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
     private void onClick() {
         edt_date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,11 +126,17 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     //Set Datepicker
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
     private void setDatePicker() {
-        int selectedYear = java.time.LocalDate.now().getYear();
-        int selectedMonth = java.time.LocalDate.now().getMonthValue();
-        int selectedDay = java.time.LocalDate.now().getDayOfMonth();
+        int selectedYear = 0;
+        int selectedMonth=1;
+        int selectedDay=1;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            selectedYear = java.time.LocalDate.now().getYear();
+            selectedMonth = java.time.LocalDate.now().getMonthValue();
+           selectedDay = java.time.LocalDate.now().getDayOfMonth();
+        }
+
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {

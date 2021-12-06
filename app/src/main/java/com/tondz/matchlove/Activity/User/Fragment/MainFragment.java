@@ -1,5 +1,6 @@
 package com.tondz.matchlove.Activity.User.Fragment;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -87,6 +89,7 @@ public class MainFragment extends Fragment {
 
     TextView tv_name, tv_age, tv_hobbies1, tv_hobbies2, tv_hobbies3, tv_space;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void loadData() {
         Account account = Common.accountList.get(Common.indexAccount);
         tv_name.setText(account.getFullName());
@@ -104,7 +107,7 @@ public class MainFragment extends Fragment {
                 tv_hobbies3.setText(account.getHobbies().get(2));
             }
         }
-        if (account.getLocation() != null && account.getLocation() != null) {
+        if (account.getLocation() != null && Common.account.getLocation() != null) {
             int space = Common.calculateDistanceInKilometer(account.getLocation().getLatitude(), account.getLocation().getLongtitude(), Common.account.getLocation().getLatitude(), Common.account.getLocation().getLongtitude());
             tv_space.setText("Cách bạn " + space + "km");
         }
