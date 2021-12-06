@@ -6,6 +6,7 @@
         <item name="DialogSpotColor">#E91E63</item>
         <item name="DialogSpotCount">10</item>
         <item name="backgroundColor">@color/white</item>
+        <item name="colorOnBackground">@color/white</item>
     </style>
     <style name="custom_login" parent="android:Theme.DeviceDefault.Dialog">
         <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
@@ -13,5 +14,14 @@
         <item name="DialogSpotColor">#E91E63</item>
         <item name="DialogSpotCount">10</item>
         <item name="backgroundColor">@color/white</item>
+        <item name="colorOnBackground">@color/white</item>
+    </style>
+    <style name="custom_pleasewait" parent="android:Theme.DeviceDefault.Dialog">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="DialogTitleText">Vui lòng chờ...</item>
+        <item name="DialogSpotColor">#E91E63</item>
+        <item name="DialogSpotCount">10</item>
+        <item name="backgroundColor">@color/white</item>
+        <item name="colorOnBackground">@color/white</item>
     </style>
 </resources>

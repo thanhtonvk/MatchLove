@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.Admin.Fragment.UserFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <AutoCompleteTextView
+        android:id="@+id/edt_search"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/editext_border"
+        android:backgroundTint="#4D000000"
+        android:gravity="center"
+        android:hint="Tìm kiếm..."/>
+    <ListView
+        android:id="@+id/lv_account"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp" />
+</LinearLayout>

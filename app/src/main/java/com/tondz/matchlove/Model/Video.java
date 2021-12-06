@@ -33,4 +33,12 @@ public class Video {
         this.name = name;
         this.views = views;
     }
+    public Video(){
+
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

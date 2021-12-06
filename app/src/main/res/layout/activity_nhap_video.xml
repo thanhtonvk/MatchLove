@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Activity.Admin.InputVideoActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Nhập thông tin video"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/edt_idvideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_border"
+        android:backgroundTint="#F3C9D7"
+        android:gravity="center"
+        android:hint="Nhập ID video"
+        android:padding="15dp"
+        android:textColor="#99000000"
+        android:textColorHint="#80000000" />
+
+    <EditText
+
+        android:id="@+id/edt_namevideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_border"
+        android:backgroundTint="#F3C9D7"
+        android:gravity="center"
+        android:hint="Tên video"
+        android:padding="15dp"
+        android:textColor="#99000000"
+        android:textColorHint="#80000000" />
+
+
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_border"
+        android:backgroundTint="#E87CA0"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="Cập nhật"
+        android:textColor="#99FFFFFF"
+        android:textColorHint="#80000000" />
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_border"
+        android:backgroundTint="#E87CA0"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="Xóa"
+        android:textColor="#99FFFFFF"
+        android:textColorHint="#80000000"
+        android:visibility="gone" />
+
+</LinearLayout>

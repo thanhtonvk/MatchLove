@@ -2,17 +2,65 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tondz.matchlove">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_heart"
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_heart"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Design.NoActionBar">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".Activity.User.PlayVideoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.User.PlayMusicActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.User.ListMusicActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.User.BlockActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.User.ViewProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.User.UploadImageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.User.EditInforActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.User.InfomationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.User.ChangePasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.User.SettingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Admin.InputMusicActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Admin.InputVideoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.Admin.AdminActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.User.ChatActivity"
+            android:exported="true" />
         <activity
             android:name=".Activity.User.UserActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Activity.RegisterActivity"
             android:exported="true" />

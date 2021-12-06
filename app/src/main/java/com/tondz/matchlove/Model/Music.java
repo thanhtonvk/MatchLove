@@ -1,7 +1,7 @@
 package com.tondz.matchlove.Model;
 
 public class Music {
-    private String id,name;
+    private String id,link,name;
     private int view;
 
     public String getId() {
@@ -32,5 +32,28 @@ public class Music {
         this.id = id;
         this.name = name;
         this.view = view;
+    }
+    public Music(){
+
+    }
+
+    public Music(String id, String link, String name, int view) {
+        this.id = id;
+        this.link = link;
+        this.name = name;
+        this.view = view;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    @Override
+    public String toString() {
+        return "♫"+name;
     }
 }

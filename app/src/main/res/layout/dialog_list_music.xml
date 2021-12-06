@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <AutoCompleteTextView
+        android:layout_margin="10dp"
+        android:id="@+id/autoComplete_music"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/editext_border"
+        android:backgroundTint="#CCCACA"
+        android:hint="♫ Nhập tên bài hát..."
+        android:paddingLeft="10dp" />
+
+    <ListView
+        android:background="@drawable/editext_border"
+        android:backgroundTint="#CCCACA"
+        android:layout_margin="10dp"
+        android:id="@+id/lv_music"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

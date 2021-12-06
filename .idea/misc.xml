@@ -3,18 +3,112 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2838541666666667" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/background_account.xml" value="0.14692982456140352" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/background_border_main.xml" value="0.2755208333333333" />
         <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/background_gradient.xml" value="0.22135416666666666" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/background_hobbies.xml" value="0.2" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/background_left.xml" value="0.21666666666666667" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/background_like.xml" value="0.25104166666666666" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/background_nav.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/background_nope.xml" value="0.25104166666666666" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/background_right.xml" value="0.21666666666666667" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/backgroung_frame.xml" value="0.2838541666666667" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/bgr_playnhac.xml" value="0.3769230769230769" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/bgr_timkiem.xml" value="0.3769230769230769" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/border_gradient.xml" value="0.18" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/button_border.xml" value="0.3828125" />
         <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/button_gradient.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/circle_cardview.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/circle_cardview_cancel.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/circle_cardview_reload.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/dark.xml" value="0.3769230769230769" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/editext_border.xml" value="0.218859649122807" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_add.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_avatar.xml" value="0.240625" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_back.xml" value="0.27708333333333335" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_camera.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_edit.xml" value="0.2838541666666667" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_emoji.xml" value="0.3828125" />
         <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_menu.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_music.xml" value="0.21140350877192982" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_pause.xml" value="0.21140350877192982" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_play.xml" value="0.21140350877192982" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_profile.xml" value="0.3769230769230769" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_refresh.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_safe.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_search.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_send.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_setting.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_video.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/ic_videocall.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/red_scubber_control.xml" value="0.2838541666666667" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/drawable/side_nav_bar.xml" value="0.3828125" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_admin.xml" value="0.25" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_block.xml" value="0.16979166666666667" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_change_password.xml" value="0.2609375" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_chat.xml" value="0.25" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_edit_infor.xml" value="0.33" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_infomation.xml" value="0.25" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_input_music.xml" value="0.15833333333333333" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_list_music.xml" value="0.35260416666666666" />
         <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_nhap_video.xml" value="0.22135416666666666" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_play_music.xml" value="0.25" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_play_video.xml" value="0.15625" />
         <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_register.xml" value="0.25" />
-        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_user.xml" value="0.33" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_setting.xml" value="0.33" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_upload_image.xml" value="0.18" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_user.xml" value="0.22" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_video.xml" value="0.19780701754385965" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/activity_view_profile.xml" value="0.33" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/call_item_left.xml" value="0.33" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/call_item_right.xml" value="0.25" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/chat_item_left.xml" value="0.20307017543859648" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/chat_item_right.xml" value="0.20307017543859648" />
         <entry key="..\:/Android/MatchLove/app/src/main/res/layout/content_administrator.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/dialog_list_music.xml" value="0.33" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/dialog_list_video.xml" value="0.19780701754385965" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/dialog_message.xml" value="0.33" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/dialog_more_chat.xml" value="0.19780701754385965" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/dialog_playvideo.xml" value="0.19780701754385965" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/fragment_account.xml" value="0.22" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/fragment_is_liked.xml" value="0.35260416666666666" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/fragment_liked.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/fragment_main.xml" value="0.22" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/fragment_match.xml" value="0.33" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/fragment_message.xml" value="0.25" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/fragment_music.xml" value="0.15833333333333333" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/fragment_search.xml" value="0.25" />
         <entry key="..\:/Android/MatchLove/app/src/main/res/layout/fragment_user.xml" value="0.19114583333333332" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/fragment_user_music.xml" value="0.2" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/fragment_video.xml" value="0.18" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/fragment_video_user.xml" value="0.16458333333333333" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/item_album.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/item_image.xml" value="0.15833333333333333" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/item_image_dialog.xml" value="0.15833333333333333" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/item_lv_account.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/item_lv_message.xml" value="0.33" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/item_lv_music.xml" value="0.25" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/item_lv_video.xml" value="0.22135416666666666" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/item_person.xml" value="0.259375" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/item_person_isliked.xml" value="0.33" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/item_person_liked.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/item_slider_photo.xml" value="0.22" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/music_item_left.xml" value="0.20307017543859648" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/music_item_right.xml" value="0.20307017543859648" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/player_buttons.xml" value="0.35260416666666666" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/player_info.xml" value="0.35260416666666666" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/player_seek.xml" value="0.35260416666666666" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/video_item_left.xml" value="0.19780701754385965" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/layout/video_item_right.xml" value="0.19780701754385965" />
         <entry key="..\:/Android/MatchLove/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MatchLove/app/src/main/res/menu/administrator.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/MatchLove/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.20520833333333333" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/menu/menu_bottom_navigation_admin.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/MatchLove/app/src/main/res/menu/menu_top_match.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

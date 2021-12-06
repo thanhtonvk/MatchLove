@@ -23,9 +23,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseUser;
-import com.tondz.matchlove.FirebaseContext.UserContext;
+import com.tondz.matchlove.FirebaseContext.AccountDBContext;
 import com.tondz.matchlove.Model.Account;
 import com.tondz.matchlove.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import dmax.dialog.SpotsDialog;
 
@@ -35,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText edt_email, edt_password, edt_name;
     Button btn_register;
     Animation animation;
-    UserContext userContext;
+    AccountDBContext accountDBContext;
     TextView edt_date;
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -43,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         initView();
-        userContext = new UserContext();
+        accountDBContext = new AccountDBContext();
         try {
             setAnimation();
         } catch (InterruptedException e) {
@@ -103,6 +106,19 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Không được để trống ngày sinh", Toast.LENGTH_SHORT).show();
                 } else {
                     Account account = new Account(edt_email.getText().toString(),edt_password.getText().toString(),edt_name.getText().toString(),edt_date.getText().toString());
+                    List<String> images = new ArrayList<>();
+                    images.add("");
+                    images.add("");
+                    images.add("");
+                    images.add("");
+                    images.add("");
+                    images.add("");
+                    images.add("");
+                    images.add("");
+                    images.add("");
+                    String avatar = images.get(0);
+                    account.setImages(images);
+                    account.setAvatar(avatar);
                     register(account);
                 }
             }
@@ -130,13 +146,18 @@ public class RegisterActivity extends AppCompatActivity {
     private void register(Account account) {
         AlertDialog progress = new SpotsDialog(RegisterActivity.this, R.style.custom_register);
         progress.show();
-        userContext.getAuth().createUserWithEmailAndPassword(account.getEmail(), account.getPassWord()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        accountDBContext.getAuth().createUserWithEmailAndPassword(account.getEmail(), account.getPassWord()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    FirebaseUser firebaseUser = userContext.getAuth().getCurrentUser();
+                    FirebaseUser firebaseUser = accountDBContext.getAuth().getCurrentUser();
                     account.setId(firebaseUser.getUid());
-                    userContext.getReference().child(account.getId()).setValue(account).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    account.setSpace(30);
+                    account.setAgefrom(18);
+                    account.setAgefrom(30);
+                    account.setFemale(true);
+                    account.setMale(false);
+                    accountDBContext.getReference().child(account.getId()).setValue(account).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
@@ -151,7 +172,6 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Đăng ký tài khoản không thành công, kiểm tra lại Email nhé", Toast.LENGTH_SHORT).show();
                     progress.dismiss();
                 }
-
             }
         });
     }

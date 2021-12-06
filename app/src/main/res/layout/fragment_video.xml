@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.Admin.Fragment.VideoFragment">
+
+    <AutoCompleteTextView
+        android:id="@+id/edt_search"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/editext_border"
+        android:backgroundTint="#4D000000"
+        android:gravity="center"
+        android:hint="Tìm kiếm..." />
+
+    <ListView
+        android:id="@+id/lv_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/edt_search"
+        android:layout_margin="20dp" />
+
+    <ImageButton
+        android:id="@+id/btn_add"
+        android:scaleType="centerCrop"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/background_account"
+        android:src="@drawable/ic_add" />
+</RelativeLayout>

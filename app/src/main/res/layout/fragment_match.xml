@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activity.User.Fragment.MatchFragment">
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="35dp"
+            android:layout_height="38dp"
+            android:src="@drawable/ic_heart" />
+
+        <TextView
+            android:id="@+id/tv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:text="MatchLove"
+            android:textColor="#FF4081"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tb_match"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/layout"
+        app:tabIndicatorColor="#FF4081"
+        app:tabSelectedTextColor="#FF4081"
+        app:tabTextColor="#5A5A5A" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager_match"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tb_match" />
+</RelativeLayout>

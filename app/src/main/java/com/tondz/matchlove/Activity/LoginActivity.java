@@ -21,10 +21,15 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
+import com.tondz.matchlove.Activity.Admin.AdminActivity;
+import com.tondz.matchlove.Activity.User.UserActivity;
 import com.tondz.matchlove.FirebaseContext.Common;
-import com.tondz.matchlove.FirebaseContext.UserContext;
+import com.tondz.matchlove.FirebaseContext.AccountDBContext;
+import com.tondz.matchlove.MainActivity;
 import com.tondz.matchlove.Model.Account;
 import com.tondz.matchlove.R;
+
+import java.util.ArrayList;
 
 import dmax.dialog.SpotsDialog;
 
@@ -34,18 +39,19 @@ public class LoginActivity extends AppCompatActivity {
     EditText edt_email, edt_password;
     Button btn_login_choose, btn_register_choose;
     Button btn_login, btn_register;
-    UserContext userContext;
+    AccountDBContext accountDBContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initView();
-        userContext = new UserContext();
+        accountDBContext = new AccountDBContext();
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_animation);
         img_logo.setAnimation(animation);
         tv_logo.setAnimation(animation);
         onClick();
+
     }
 
     private void initView() {
@@ -98,25 +104,28 @@ public class LoginActivity extends AppCompatActivity {
     private void login() {
         AlertDialog progress = new SpotsDialog(LoginActivity.this, R.style.custom_login);
         progress.show();
-        userContext.getAuth().signInWithEmailAndPassword(edt_email.getText().toString(), edt_password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        accountDBContext.getAuth().signInWithEmailAndPassword(edt_email.getText().toString(), edt_password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    userContext.getReference().addValueEventListener(new ValueEventListener() {
+                    accountDBContext.getReference().addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                 Account account = dataSnapshot.getValue(Account.class);
-                                if (account.getId().equals(userContext.getAuth().getCurrentUser().getUid())) {
+                                if (account.getId().equals(accountDBContext.getAuth().getCurrentUser().getUid())) {
+
                                     if (account != null && account.isAdmin()) {
                                         Common.account = account;
-                                        //startActivity(new Intent(LoginActivity.this,AdministratorActivity.class));
+                                        startActivity(new Intent(LoginActivity.this, AdminActivity.class));
                                         finish();
                                         //admin
                                         Toast.makeText(getApplicationContext(), "Đây là admin", Toast.LENGTH_SHORT).show();
                                     } else if (account != null && account.isFirstSetup()) {
                                         Common.account = account;
                                         Toast.makeText(getApplicationContext(), "Đây là lần đầu", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(LoginActivity.this, UserActivity.class));
+                                        finish();
                                         //first setup
                                     } else if (account != null && account.isBlock()) {
                                         Common.account = account;
@@ -125,7 +134,10 @@ public class LoginActivity extends AppCompatActivity {
                                         //normal account
                                         Common.account = account;
                                         Toast.makeText(getApplicationContext(), "Tài khoản bình thường", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(LoginActivity.this, UserActivity.class));
+                                        finish();
                                     }
+                                    loadListAccount();
 
                                 }
                             }
@@ -141,6 +153,26 @@ public class LoginActivity extends AppCompatActivity {
                     progress.dismiss();
                     Toast.makeText(LoginActivity.this, "Đăng nhập thất bại, kiểm tra lại email hoặc mật khẩu nhé bạn!!!", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+    }
+    private void loadListAccount() {
+        Common.accountList = new ArrayList<>();
+        accountDBContext.getReference().addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()
+                ) {
+                    Account account = dataSnapshot.getValue(Account.class);
+                    if(!account.getId().equals(accountDBContext.getAuth().getCurrentUser().getUid())){
+                        Common.accountList.add(account);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }
