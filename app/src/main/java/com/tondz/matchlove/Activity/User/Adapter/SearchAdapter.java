@@ -6,8 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.tondz.matchlove.Activity.User.Fragment.FragmentMatch.IsLikedFragment;
-import com.tondz.matchlove.Activity.User.Fragment.FragmentMatch.LikedFragment;
+import com.tondz.matchlove.Activity.User.Fragment.FragmentSearch.MapsFragment;
 import com.tondz.matchlove.Activity.User.Fragment.FragmentSearch.MusicFragmentUser;
 import com.tondz.matchlove.Activity.User.Fragment.FragmentSearch.VideoFragmentUser;
 
@@ -24,6 +23,8 @@ public class SearchAdapter extends FragmentStatePagerAdapter {
                 return new MusicFragmentUser();
             case 1:
                 return new VideoFragmentUser();
+            case 2:
+                return new MapsFragment();
             default:
                 return new MusicFragmentUser();
         }
@@ -31,17 +32,19 @@ public class SearchAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
 
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        switch (position){
+        switch (position) {
             case 0:
                 return "Nhạc";
             case 1:
                 return "Video";
+            case 2:
+                return "Khám phá";
             default:
                 return "Nhạc";
         }

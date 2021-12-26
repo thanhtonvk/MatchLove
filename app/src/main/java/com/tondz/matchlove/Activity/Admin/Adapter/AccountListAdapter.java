@@ -3,6 +3,7 @@ package com.tondz.matchlove.Activity.Admin.Adapter;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.tondz.matchlove.FirebaseContext.AccountDBContext;
 import com.tondz.matchlove.Model.Account;
 import com.tondz.matchlove.R;
@@ -45,8 +47,15 @@ public class AccountListAdapter extends ArrayAdapter<Account> {
             Account account = getItem(position);
             if (account != null) {
                 tv_name.setText(account.getFullName());
-                Glide.with(getContext()).load(account.getAvatar()).into(img_avatar);
-                tv_id.setText(account.getId());
+                tv_id.setText("Tình trạng: "+account.isBlock());
+                if(!account.getAvatar().equals("")){
+                    dbContext.getStorageReference().child(account.getId()).child(account.getAvatar()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            Glide.with(getContext()).load(uri).into(img_avatar);
+                        }
+                    });
+                }
             }
         }
 

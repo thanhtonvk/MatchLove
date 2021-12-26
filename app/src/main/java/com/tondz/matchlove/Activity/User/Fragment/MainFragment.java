@@ -16,7 +16,11 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 import com.tondz.matchlove.Activity.User.Adapter.PhotoAdapter;
+import com.tondz.matchlove.FirebaseContext.AccountDBContext;
 import com.tondz.matchlove.FirebaseContext.Common;
 import com.tondz.matchlove.FirebaseContext.MatchDBContext;
 import com.tondz.matchlove.Model.Account;
@@ -87,6 +91,7 @@ public class MainFragment extends Fragment {
         tv_space = view.findViewById(R.id.tv_space);
         matchDBContext = new MatchDBContext(getContext());
         random = new Random();
+        accountDBContext= new AccountDBContext();
     }
 
     TextView tv_name, tv_age, tv_hobbies1, tv_hobbies2, tv_hobbies3, tv_space;
@@ -120,13 +125,6 @@ public class MainFragment extends Fragment {
 
         circleIndicator.setViewPager(viewPager);
         photoAdapter.registerDataSetObserver(circleIndicator.getDataSetObserver());
-    }
-    List<Account>accounts;
-    private void filter(){
-        for (Account account:Common.accountList
-             ) {
-
-        }
     }
     MatchDBContext matchDBContext;
 
@@ -187,6 +185,38 @@ public class MainFragment extends Fragment {
                         tv_like.setVisibility(View.GONE);
                     }
                 }.start();
+
+            }
+        });
+        btn_reload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadListAccount();
+
+            }
+        });
+    }
+    AccountDBContext accountDBContext;
+    private void loadListAccount() {
+        Common.accountList = new ArrayList<>();
+        accountDBContext.getReference().addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()
+                ) {
+                    Account account = dataSnapshot.getValue(Account.class);
+                    if(!account.getId().equals(accountDBContext.getAuth().getCurrentUser().getUid())){
+                        if(account.isBlock()!=false){
+                            Common.accountList.add(account);
+                        }
+                    }
+                }
+                Common.indexAccount= 0;
+                loadData();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });

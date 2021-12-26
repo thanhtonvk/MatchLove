@@ -32,6 +32,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
+import com.tondz.matchlove.Activity.Admin.AdminActivity;
 import com.tondz.matchlove.Activity.LoginActivity;
 import com.tondz.matchlove.Activity.User.UploadImageActivity;
 import com.tondz.matchlove.Activity.User.UserActivity;
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                                             Common.account = account;
                                             finish();
                                             //admin
-                                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                                            startActivity(new Intent(getApplicationContext(), AdminActivity.class));
                                             finish();
                                            ;
                                         } else if (account != null && account.isFirstSetup()) {
@@ -146,7 +147,10 @@ public class MainActivity extends AppCompatActivity {
                 ) {
                     Account account = dataSnapshot.getValue(Account.class);
                     if(!account.getId().equals(accountDBContext.getAuth().getCurrentUser().getUid())){
-                        Common.accountList.add(account);
+                        if(account.isBlock()!=false){
+                            Common.accountList.add(account);
+                        }
+
                     }
 
                 }
